@@ -13,6 +13,15 @@ public class Triangle {
     private Point pointA;
     private Point pointB;
     private Point pointC;
+    private String pointD;
+
+    public String getPointD() {
+        return pointD;
+    }
+
+    public void setPointD(String pointD) {
+        this.pointD = pointD;
+    }
 
     public Point getPointA() {
         return pointA;
@@ -42,5 +51,6 @@ public class Triangle {
         pointA.draw();
         pointB.draw();
         pointC.draw();
+        System.out.print(pointD);
     }
 }

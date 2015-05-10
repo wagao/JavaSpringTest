@@ -7,24 +7,31 @@ and open the template in the editor.
 -->
 
 
-<beans>
-        <bean id="triangle" class="javaspringtest.Triangle" >            
-            <property name="pointA" ref="zeroPoint"/>
-            <property name="pointB" ref="point2"/>
-            <property name="pointC" ref="point3"/>
-            
-        </bean >
-        <bean id="zeroPoint" class="javaspringtest.Point" >
-            <property name="x" value="0"/>
-            <property name="y" value="0"/>
-        </bean >
-        <bean id="point2" class="javaspringtest.Point" >
-            <property name="x" value="0"/>
-            <property name="y" value="-20"/>
-        </bean >
-        <bean id="point3" class="javaspringtest.Point" >
-            <property name="x" value="20"/>
-            <property name="y" value="0"/>
-        </bean >
+<beans>  
+    <bean id="triangle" class="javaspringtest.Triangle" >            
+        <property name="pointA" ref = "zeroPoint"/>      
+        <property name="pointD" >
+            <idref bean ="zeroPoint" />
+        </property>
+        <property name="pointB" >
+            <bean class="javaspringtest.Point" >
+                <property name="x" value="0"/>
+                <property name="y" value="-20"/>
+            </bean>
+        </property>
+        <property name="pointC" >                
+            <bean  class="javaspringtest.Point" >
+                <property name="x" value="20"/>
+                <property name="y" value="0"/>
+            </bean>
+        </property>            
+    </bean>
+
+    <bean id="zeroPoint" class="javaspringtest.Point" >
+        <property name="x" value="0"/>
+        <property name="y" value="0"/>
+    </bean>
+
+    <alias name="triangle" alias="tri-alias" />
     
 </beans>
