@@ -12,12 +12,29 @@ package javaspringtest;
 public class Triangle {
     private String type;
     private String edges;
+    private int height;
 
     Triangle(){
     }
     Triangle(String edges){
         this.edges = edges;
     }
+    Triangle(String type, int h){
+        this.type = type;
+        this.height = h;
+    }
+    Triangle(String type, String edges){
+        this.type = type;
+        this.edges = edges;
+    }
+    
+    Triangle(String type, int h, String edges){
+        this.type = type;
+        this.edges = edges;
+        this.height = h;
+    }
+    
+    
     public String getType() {
         return type;
     }
@@ -26,7 +43,8 @@ public class Triangle {
         this.type = type;
     }
     public void draw(){
-    if(edges!=null) System.out.println("how many edges you have?\n  A"+ this.edges );
-    if(type!=null) System.out.println("this is a triangle with type "+ getType());
+         System.out.println("Draw TriType:"+ height);
+    if(edges!=null) System.out.println("how many edges you have?\n  A:"+ this.edges );
+    if(type!=null) System.out.println("Draw TriType:"+ getType());
     }
 }
