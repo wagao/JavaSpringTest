@@ -11,7 +11,13 @@ package javaspringtest;
  */
 public class Triangle {
     private String type;
+    private String edges;
 
+    Triangle(){
+    }
+    Triangle(String edges){
+        this.edges = edges;
+    }
     public String getType() {
         return type;
     }
@@ -20,6 +26,7 @@ public class Triangle {
         this.type = type;
     }
     public void draw(){
-    System.out.println("this is a triangle with type "+getType());
+    if(edges!=null) System.out.println("how many edges you have?\n  A"+ this.edges );
+    if(type!=null) System.out.println("this is a triangle with type "+ getType());
     }
 }
