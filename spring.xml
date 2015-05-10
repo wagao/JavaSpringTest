@@ -8,7 +8,7 @@ and open the template in the editor.
 
 
 <beans>  
-    <bean id="triangle" class="javaspringtest.Triangle" >            
+    <bean id="triangle" class="javaspringtest.Triangle" scope="singleton" >            
         <property name="points" >      
             <list>
                 <ref bean="zeroPoint" />
