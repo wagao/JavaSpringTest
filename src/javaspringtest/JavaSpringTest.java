@@ -28,7 +28,7 @@ public class JavaSpringTest {
         
         
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        Triangle triObj = (Triangle) context.getBean("tri-alias");
+        Triangle triObj = (Triangle) context.getBean("triangle");
         triObj.draw();
     }
     

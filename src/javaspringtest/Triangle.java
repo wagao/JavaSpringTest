@@ -5,52 +5,25 @@
  */
 package javaspringtest;
 
+import java.util.List;
+
 /**
  *
  * @author Emma
  */
 public class Triangle {
-    private Point pointA;
-    private Point pointB;
-    private Point pointC;
-    private String pointD;
+    private List<Point> points;
 
-    public String getPointD() {
-        return pointD;
+    public List<Point> getPoints() {
+        return points;
     }
 
-    public void setPointD(String pointD) {
-        this.pointD = pointD;
-    }
-
-    public Point getPointA() {
-        return pointA;
-    }
-
-    public void setPointA(Point pointA) {
-        this.pointA = pointA;
-    }
-
-    public Point getPointB() {
-        return pointB;
-    }
-
-    public void setPointB(Point pointB) {
-        this.pointB = pointB;
-    }
-
-    public Point getPointC() {
-        return pointC;
-    }
-
-    public void setPointC(Point pointC) {
-        this.pointC = pointC;
+    public void setPoints(List<Point> points) {
+        this.points = points;
     }
     
     public void draw(){
-        pointA.draw();
-        pointB.draw();
-        pointC.draw();
-        System.out.print(pointD);
+        for(Point point: points)
+            point.draw();
     }
 }
