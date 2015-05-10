@@ -10,41 +10,37 @@ package javaspringtest;
  * @author Emma
  */
 public class Triangle {
-    private String type;
-    private String edges;
-    private int height;
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
 
-    Triangle(){
-    }
-    Triangle(String edges){
-        this.edges = edges;
-    }
-    Triangle(String type, int h){
-        this.type = type;
-        this.height = h;
-    }
-    Triangle(String type, String edges){
-        this.type = type;
-        this.edges = edges;
-    }
-    
-    Triangle(String type, int h, String edges){
-        this.type = type;
-        this.edges = edges;
-        this.height = h;
-    }
-    
-    
-    public String getType() {
-        return type;
+    public Point getPointA() {
+        return pointA;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setPointA(Point pointA) {
+        this.pointA = pointA;
     }
+
+    public Point getPointB() {
+        return pointB;
+    }
+
+    public void setPointB(Point pointB) {
+        this.pointB = pointB;
+    }
+
+    public Point getPointC() {
+        return pointC;
+    }
+
+    public void setPointC(Point pointC) {
+        this.pointC = pointC;
+    }
+    
     public void draw(){
-         System.out.println("Draw TriType:"+ height);
-    if(edges!=null) System.out.println("how many edges you have?\n  A:"+ this.edges );
-    if(type!=null) System.out.println("Draw TriType:"+ getType());
+        pointA.draw();
+        pointB.draw();
+        pointC.draw();
     }
 }

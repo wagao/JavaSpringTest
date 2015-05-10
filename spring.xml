@@ -8,18 +8,23 @@ and open the template in the editor.
 
 
 <beans>
-        <bean id="triangle" class="javaspringtest.Triangle" >
-        <!--    <property name="type" value="EquilateralTriangle" />
-            <constructor-arg type="java.lang.String" value="Equilateral-con" />
-            <constructor-arg type="int" value="10" />
-            <constructor-arg  value="Equilateral-con" />
-            <constructor-arg  value="10000" />
-            <constructor-arg  value="5555" />-->
-            <constructor-arg index="0"  value="Equilateral-con" />
-            <constructor-arg index="2"  value="10000" />
-            <constructor-arg index="1"  value="5555" />
+        <bean id="triangle" class="javaspringtest.Triangle" >            
+            <property name="pointA" ref="zeroPoint"/>
+            <property name="pointB" ref="point2"/>
+            <property name="pointC" ref="point3"/>
             
-            
+        </bean >
+        <bean id="zeroPoint" class="javaspringtest.Point" >
+            <property name="x" value="0"/>
+            <property name="y" value="0"/>
+        </bean >
+        <bean id="point2" class="javaspringtest.Point" >
+            <property name="x" value="0"/>
+            <property name="y" value="-20"/>
+        </bean >
+        <bean id="point3" class="javaspringtest.Point" >
+            <property name="x" value="20"/>
+            <property name="y" value="0"/>
         </bean >
     
 </beans>
