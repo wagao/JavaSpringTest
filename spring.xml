@@ -7,52 +7,27 @@ and open the template in the editor.
 -->
 
 
-<beans>  
+<beans default-init-method="myInit" default-destroy-method="myDestory">  
     <bean id="triangle" class="javaspringtest.Triangle" >            
         <property name="points" >      
             <list>
                 <ref bean="zeroPoint" />
-            </list>      
-        </property>            
-    </bean>
-    <bean id="triangleAbs" class="javaspringtest.Triangle" abstract="true" >    
-<!--        abstract is interpretated as ignore beans just get the template by Spring     
-         child collection will overwrite parent point           -->        
-        <property name="points" >      
-            <list>
-                <ref bean="zeroPoint" />
-                <ref bean="zeroPoint2" />
-                <ref bean="zeroPoint3" />
-            </list>      
-        </property>            
-    </bean>
-  <bean id="triangle1" class="javaspringtest.Triangle" parent="triangle" > 
-        <property name="points" >      
-            <list >
-                <ref bean="zeroPoint2" />
-                <ref bean="zeroPoint3" />
-            </list>      
-        </property>            
-    </bean>
-      <bean id="triangle2" class="javaspringtest.Triangle" parent="triangle" > 
-        <!--will merge parent point-->           
-        <property name="points" >      
-            <list merge="true" >
                 <ref bean="zeroPoint2" />
                 <ref bean="zeroPoint3" />
             </list>      
         </property>            
     </bean>
     
-      <bean id="triangle3" class="javaspringtest.Triangle" parent="triangleAbs" > 
+    <bean id="triangleinit" class="javaspringtest.Triangle" init-method="myInit" destroy-method="myDestory">            
         <property name="points" >      
-            <list >
+            <list>
+                <ref bean="zeroPoint" />
                 <ref bean="zeroPoint2" />
                 <ref bean="zeroPoint3" />
             </list>      
         </property>            
     </bean>
-
+    
     <bean id="zeroPoint" class="javaspringtest.Point" >
         <property name="x" value="0"/>
         <property name="y" value="0"/>

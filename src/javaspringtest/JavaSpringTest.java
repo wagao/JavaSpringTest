@@ -5,7 +5,7 @@
  */
 package javaspringtest;
 
-import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -27,13 +27,16 @@ public class JavaSpringTest {
 //        file path can be relative or system (/home/user/Work/src...)
         
         
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        Triangle triObj = (Triangle) context.getBean("triangle1");
+        AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        context.registerShutdownHook();
+//        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        Triangle triObj = (Triangle) context.getBean("triangle");
         triObj.draw();
-        Triangle triObj2 = (Triangle) context.getBean("triangle2");
+        
+        
+        Triangle triObj2 = (Triangle) context.getBean("triangleinit");
         triObj2.draw();
-        Triangle triObj3 = (Triangle) context.getBean("triangle3");
-        triObj3.draw();
+        
     }
     
 }
