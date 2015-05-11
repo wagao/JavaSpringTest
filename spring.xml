@@ -8,41 +8,20 @@
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd"
   xmlns:context="http://www.springframework.org/schema/context">
-    
-<!--    <bean id="shape" class="javaspringtest.Triangle" >            
-        <property name="points" >      
-            <list>
-                <ref bean="zeroPoint" />
-                <ref bean="zeroPoint2" />
-                <ref bean="zeroPoint3" />
-            </list>      
-        </property>            
-    </bean>    
-    <bean id="triangle" class="javaspringtest.Triangle" >            
-        <property name="points" >      
-            <list>
-                <ref bean="zeroPoint" />
-                <ref bean="zeroPoint2" />
-                <ref bean="zeroPoint3" />
-            </list>      
-        </property>            
-    </bean>    -->
-    <bean id="circle" class="javaspringtest.Circle" >            
-<!--        <property name="center"  ref= "zeroPoint">     
-        </property>            -->
-    </bean>    
-    <bean id="zeroPoint2" class="javaspringtest.Point" >
+      
+    <bean id="zeroPoint" class="javaspringtest.Point" >
         <qualifier value="circleC" />
         <property name="x" value="0"/>
-        <property name="y" value="-20"/>
+        <property name="y" value="0"/>
     </bean> 
     
-    <bean id="zeroPoint3" class="javaspringtest.Point" >
+    <bean id="center" class="javaspringtest.Point" >
         <property name="x" value="20"/>
         <property name="y" value="0"/>
     </bean>
     
     
+     <context:component-scan base-package="javaspringtest" />
      <context:annotation-config />
 <!--    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
     <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />-->

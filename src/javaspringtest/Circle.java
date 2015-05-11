@@ -5,19 +5,31 @@
  */
 package javaspringtest;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author Emma
  */
+@Component
 public class Circle implements Shape{
     private Point center;
 
     public Point getCenter() {
         return center;
     }
+@PostConstruct
+public void iniC(){
+        System.out.print("after  ini ");
+}
 
+@PreDestroy
+public void destroy(){
+        System.out.print("pre destroy ");
+}
 //    @Required
 //    @Autowired
 //    @Qualifier("circleC")
