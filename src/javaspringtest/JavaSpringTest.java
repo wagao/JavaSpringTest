@@ -33,10 +33,6 @@ public class JavaSpringTest {
         Triangle triObj = (Triangle) context.getBean("triangle");
         triObj.draw();
         
-        
-        Triangle triObj2 = (Triangle) context.getBean("triangleinit");
-        triObj2.draw();
-        
     }
     
 }

@@ -14,26 +14,9 @@ import org.springframework.context.ApplicationContext;
  *
  * @author Emma
  */
-public class Triangle implements InitializingBean, DisposableBean {
+public class Triangle implements Shape {
     private List<Point> points;
     private ApplicationContext context=null;
-    
-    @Override
-    public void destroy() throws Exception {
-        System.out.println("Destory triangle");
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }    
-    @Override
-    public void afterPropertiesSet() throws Exception {
-        System.out.println("ini for triangle");
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    public void myInit(){      
-          System.out.println("ini from xml named method");
-    }
-    public void myDestory(){      
-          System.out.println("clean from xml named method");
-    }
 
     public List<Point> getPoints() {
         return points;
@@ -44,6 +27,7 @@ public class Triangle implements InitializingBean, DisposableBean {
     }
     
     public void draw(){
+        System.out.print("this is a triangle with points: ");
         for(Point point: points)
             point.draw();
     }

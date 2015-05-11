@@ -7,7 +7,7 @@ and open the template in the editor.
 -->
 
 
-<beans default-init-method="myInit" default-destroy-method="myDestory">  
+<beans >  
     <bean id="triangle" class="javaspringtest.Triangle" >            
         <property name="points" >      
             <list>
@@ -16,21 +16,11 @@ and open the template in the editor.
                 <ref bean="zeroPoint3" />
             </list>      
         </property>            
-    </bean>
-    
-    <bean id="triangleinit" class="javaspringtest.Triangle" init-method="myInit" destroy-method="myDestory">            
-        <property name="points" >      
-            <list>
-                <ref bean="zeroPoint" />
-                <ref bean="zeroPoint2" />
-                <ref bean="zeroPoint3" />
-            </list>      
-        </property>            
-    </bean>
+    </bean>    
     
     <bean id="zeroPoint" class="javaspringtest.Point" >
-        <property name="x" value="0"/>
-        <property name="y" value="0"/>
+        <property name="x" value="${zeroPoint.x}"/>
+        <property name="y" value="${zeroPoint.y}"/>
     </bean>
     
     <bean id="zeroPoint2" class="javaspringtest.Point" >
@@ -43,4 +33,9 @@ and open the template in the editor.
         <property name="y" value="0"/>
     </bean>
     
+    <!--<bean class="javaspringtest.myBeanFactoryPP" />-->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
+        <property name="locations" value="pointsconf.properties" />
+        <!--<property name="locations" value="classpath:pointsconf.properties" />-->
+    </bean>
 </beans>
