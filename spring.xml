@@ -36,17 +36,11 @@
         <property name="x" value="0"/>
         <property name="y" value="-20"/>
     </bean> 
-   
-    
-<!--    <bean id="zeroPoint" class="javaspringtest.Point" >
-        <property name="x" value="${zeroPoint.x}"/>
-        <property name="y" value="${zeroPoint.y}"/>
-    </bean>
     
     <bean id="zeroPoint3" class="javaspringtest.Point" >
         <property name="x" value="20"/>
         <property name="y" value="0"/>
-    </bean>-->
+    </bean>
     
     
      <context:annotation-config />

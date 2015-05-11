@@ -5,8 +5,7 @@
  */
 package javaspringtest;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import javax.annotation.Resource;
 
 /**
  *
@@ -20,8 +19,10 @@ public class Circle implements Shape{
     }
 
 //    @Required
-    @Autowired
-    @Qualifier("circleC")
+//    @Autowired
+//    @Qualifier("circleC")
+//    @Resource(name="zeroPoint3")  
+     @Resource // if there is no name , would looking for the member variable 
     public void setCenter(Point center) {
         this.center = center;
     }
