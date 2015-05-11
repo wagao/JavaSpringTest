@@ -5,7 +5,7 @@
  */
 package javaspringtest;
 
-import org.springframework.context.support.AbstractApplicationContext;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -26,13 +26,15 @@ public class JavaSpringTest {
 //        file: preffix point to file system resources, not classpath.
 //        file path can be relative or system (/home/user/Work/src...)
         
-        
-        AbstractApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        context.registerShutdownHook();
-//        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+       ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
         Triangle triObj = (Triangle) context.getBean("triangle");
         triObj.draw();
         
+        Circle circleObj = (Circle) context.getBean("circle");
+        circleObj.draw();
+       
+        Shape shape = (Shape) context.getBean("shape");
+        shape.draw();
     }
     
 }
