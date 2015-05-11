@@ -3,7 +3,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans  
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context.xsd"
+  xmlns:context="http://www.springframework.org/schema/context">
     
 <!--    <bean id="shape" class="javaspringtest.Triangle" >            
         <property name="points" >      
@@ -44,12 +48,8 @@
         <property name="y" value="0"/>
     </bean>-->
     
-<!--    <bean class="javaspringtest.myBeanFactoryPP" />
-    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
-        <property name="locations" value="pointsconf.properties" />
-        <property name="locations" value="classpath:pointsconf.properties" />
-    </bean>-->
     
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
-    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+     <context:annotation-config />
+<!--    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />-->
 </beans>
