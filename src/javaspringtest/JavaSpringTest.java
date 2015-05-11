@@ -30,6 +30,7 @@ public class JavaSpringTest {
        
         Shape shape = (Shape) context.getBean("circle");
         shape.draw();
+//        System.out.println(context.getMessage("greetings", null, "Default Greeting", null)); // key in proprity file, , default msg, location to look for 
     }
     
 }

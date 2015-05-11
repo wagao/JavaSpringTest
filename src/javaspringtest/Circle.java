@@ -8,15 +8,30 @@ package javaspringtest;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.MessageSource;
+import org.springframework.stereotype.Controller;
 
 /**
  *
  * @author Emma
  */
-@Component
+@Controller
 public class Circle implements Shape{
     private Point center;
+    
+    @Autowired
+    private MessageSource messageSource;
+
+    public MessageSource getMessageSource() {
+        return messageSource;
+    }
+
+    public void setMessageSource(MessageSource messageSource) {
+        this.messageSource = messageSource;
+    }
+
+
 
     public Point getCenter() {
         return center;
@@ -41,8 +56,10 @@ public void destroy(){
 
     @Override
     public void draw() {
-        System.out.print("this is a circle with center ");
-        center.draw();
+        System.out.println(this.messageSource.getMessage("drawing.c",null,"default Drawing",null));
+        System.out.println(this.messageSource.getMessage("drawing.point", new Object[]{center.getX(), center.getY()},"default Drawing",null));
+//        center.draw();
+//        System.out.println(this.messageSource.getMessage("greetings",null, "Default",null));
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

@@ -20,7 +20,13 @@
         <property name="y" value="0"/>
     </bean>
     
-    
+    <bean id ="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">        
+        <property name="basenames" >            
+        <list>
+          <value>myMsg</value> <!--   where to find property file-->
+        </list>            
+        </property>
+    </bean>
      <context:component-scan base-package="javaspringtest" />
      <context:annotation-config />
 <!--    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
