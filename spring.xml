@@ -12,31 +12,46 @@ and open the template in the editor.
         <property name="points" >      
             <list>
                 <ref bean="zeroPoint" />
-<!--                <ref bean="zeroPoint2" />
-                <ref bean="zeroPoint3" />-->
+            </list>      
+        </property>            
+    </bean>
+    <bean id="triangleAbs" class="javaspringtest.Triangle" abstract="true" >    
+<!--        abstract is interpretated as ignore beans just get the template by Spring     
+         child collection will overwrite parent point           -->        
+        <property name="points" >      
+            <list>
+                <ref bean="zeroPoint" />
+                <ref bean="zeroPoint2" />
+                <ref bean="zeroPoint3" />
             </list>      
         </property>            
     </bean>
   <bean id="triangle1" class="javaspringtest.Triangle" parent="triangle" > 
-<!--        abstract is interpretated as ignore beans just get the template by Spring    abstract="true"  
-         child collection will overwrite parent point           -->
         <property name="points" >      
-            <list merge="true" >
-                <!--<ref bean="zeroPoint" />-->
+            <list >
                 <ref bean="zeroPoint2" />
                 <ref bean="zeroPoint3" />
             </list>      
         </property>            
     </bean>
-<!--      <bean id="triangle2" class="javaspringtest.Triangle" parent="triangle" > 
-        will merge parent point           
+      <bean id="triangle2" class="javaspringtest.Triangle" parent="triangle" > 
+        <!--will merge parent point-->           
         <property name="points" >      
             <list merge="true" >
                 <ref bean="zeroPoint2" />
                 <ref bean="zeroPoint3" />
             </list>      
         </property>            
-    </bean>-->
+    </bean>
+    
+      <bean id="triangle3" class="javaspringtest.Triangle" parent="triangleAbs" > 
+        <property name="points" >      
+            <list >
+                <ref bean="zeroPoint2" />
+                <ref bean="zeroPoint3" />
+            </list>      
+        </property>            
+    </bean>
 
     <bean id="zeroPoint" class="javaspringtest.Point" >
         <property name="x" value="0"/>
