@@ -5,6 +5,9 @@
  */
 package javaspringtest;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 /**
  *
  * @author Emma
@@ -16,6 +19,9 @@ public class Circle implements Shape{
         return center;
     }
 
+//    @Required
+    @Autowired
+    @Qualifier("circleC")
     public void setCenter(Point center) {
         this.center = center;
     }

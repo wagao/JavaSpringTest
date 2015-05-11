@@ -27,13 +27,8 @@ public class JavaSpringTest {
 //        file path can be relative or system (/home/user/Work/src...)
         
        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        Triangle triObj = (Triangle) context.getBean("triangle");
-        triObj.draw();
-        
-        Circle circleObj = (Circle) context.getBean("circle");
-        circleObj.draw();
        
-        Shape shape = (Shape) context.getBean("shape");
+        Shape shape = (Shape) context.getBean("circle");
         shape.draw();
     }
     

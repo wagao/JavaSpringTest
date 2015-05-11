@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN" "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 
-
-<beans >  
-    <bean id="shape" class="javaspringtest.Triangle" >            
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    
+<!--    <bean id="shape" class="javaspringtest.Triangle" >            
         <property name="points" >      
             <list>
                 <ref bean="zeroPoint" />
@@ -25,30 +22,34 @@ and open the template in the editor.
                 <ref bean="zeroPoint3" />
             </list>      
         </property>            
-    </bean>    
+    </bean>    -->
     <bean id="circle" class="javaspringtest.Circle" >            
-        <property name="center"  ref= "zeroPoint">     
-        </property>            
+<!--        <property name="center"  ref= "zeroPoint">     
+        </property>            -->
     </bean>    
-    
-    <bean id="zeroPoint" class="javaspringtest.Point" >
-        <property name="x" value="${zeroPoint.x}"/>
-        <property name="y" value="${zeroPoint.y}"/>
-    </bean>
-    
     <bean id="zeroPoint2" class="javaspringtest.Point" >
+        <qualifier value="circleC" />
         <property name="x" value="0"/>
         <property name="y" value="-20"/>
+    </bean> 
+   
+    
+<!--    <bean id="zeroPoint" class="javaspringtest.Point" >
+        <property name="x" value="${zeroPoint.x}"/>
+        <property name="y" value="${zeroPoint.y}"/>
     </bean>
     
     <bean id="zeroPoint3" class="javaspringtest.Point" >
         <property name="x" value="20"/>
         <property name="y" value="0"/>
-    </bean>
+    </bean>-->
     
-    <!--<bean class="javaspringtest.myBeanFactoryPP" />-->
+<!--    <bean class="javaspringtest.myBeanFactoryPP" />
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer" >
         <property name="locations" value="pointsconf.properties" />
-        <!--<property name="locations" value="classpath:pointsconf.properties" />-->
-    </bean>
+        <property name="locations" value="classpath:pointsconf.properties" />
+    </bean>-->
+    
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
+    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
 </beans>
